@@ -7,17 +7,15 @@ module("Acceptance | browse books", function (hooks) {
   setupApplicationTest(hooks);
   setupMirage(hooks);
 
-  // open root
-  // open sidebar
-  // click books
-
   test("browse books", async function (assert) {
     this.server.createList("book", 10);
 
     await visit("/");
-    click("nav button[aria-label='Open Menu']");
-    await click("aside li:nth-child(1) a");
+    await click("nav button[aria-label='Open Menu']");
+    assert.dom("aside.translate-x-0").exists();
 
+    await click("aside li:nth-child(1) a");
     assert.equal(currentURL(), "/books");
+    assert.dom("aside.-translate-x-full").exists();
   });
 });

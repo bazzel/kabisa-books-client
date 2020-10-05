@@ -12,16 +12,16 @@
   </svg>
 </button>
 
-{{#if this.isOpen}}
+{{#if this.navDrawer.isOpen}}
   <div class="z-10 fixed inset-0 transition-opacity">
     <div class="absolute inset-0 bg-black opacity-25" tabindex="0" {{on "click" this.closeMenu }}></div>
   </div>
 {{/if}}
 
 <aside
-  class="transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto shadow ease-in-out transition-all duration-300 z-30 {{if this.isOpen "translate-x-0" "-translate-x-full"}}"
+  class="transform top-0 left-0 w-64 bg-white fixed h-full overflow-auto shadow ease-in-out transition-all duration-300 z-30 {{if this.navDrawer.isOpen "translate-x-0" "-translate-x-full"}}"
 >
-  <span class="flex w-full items-center px-4 py-3 mb-2 border-b bg-gray-200 text-xl font-medium leading-6">Books</span>
+  <LinkTo @route="index" class="flex w-full items-center px-4 py-3 mb-2 border-b bg-gray-200 text-xl font-medium leading-6">Books</LinkTo>
   <ul>
     <li><LinkTo @route="books" class="flex px-4 py-3 hover:bg-gray-200">Books</LinkTo></li>
   </ul>

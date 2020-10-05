@@ -1,17 +1,17 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
+import { inject as service } from "@ember/service";
 
 export default class NavDrawerComponent extends Component {
-  @tracked isOpen = false;
+  @service navDrawer;
 
   @action
   openMenu() {
-    this.isOpen = true;
+    this.navDrawer.openMenu();
   }
 
   @action
   closeMenu() {
-    this.isOpen = false;
+    this.navDrawer.closeMenu();
   }
 }
