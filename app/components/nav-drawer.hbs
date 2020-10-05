@@ -1,4 +1,4 @@
-<button class="mr-2" aria-label="Open Menu" {{on "click" this.openMenu }}>
+<button class="mr-2" aria-label="Open Menu" {{on "click" this.openMenu}}>
   <svg
     fill="none"
     stroke="currentColor"
@@ -14,7 +14,7 @@
 
 {{#if this.navDrawer.isOpen}}
   <div class="z-10 fixed inset-0 transition-opacity">
-    <div class="absolute inset-0 bg-black opacity-25" tabindex="0" {{on "click" this.closeMenu }}></div>
+    <div class="absolute inset-0 bg-black opacity-25" tabindex="0" {{on "click" this.closeMenu}}></div>
   </div>
 {{/if}}
 
