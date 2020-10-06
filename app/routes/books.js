@@ -2,7 +2,6 @@ import Route from "@ember/routing/route";
 import { inject as service } from "@ember/service";
 
 export default class BooksRoute extends Route {
-  // @service store;
   @service infinity;
 
   model() {
@@ -13,11 +12,5 @@ export default class BooksRoute extends Route {
       pageParam: "page[number]",
       totalPagesParam: "meta.page-count",
     });
-    // return this.store.query("book", {
-    //   page: {
-    //     offset: 0,
-    //     limit: 3,
-    //   },
-    // });
   }
 }
