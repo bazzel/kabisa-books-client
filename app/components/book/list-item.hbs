@@ -1,10 +1,12 @@
-<li class="p-5 transition-spacing duration-100 ease-in-out {{if this.isExpanded "-mx-6 my-6 shadow-lg" "shadow hover:shadow-lg"}}" {{on "click" this.toggleExpansion}}>
+<li class="p-5 transition-spacing duration-100 ease-in-out border border-gray-300 -m-px {{if this.isExpanded "-mx-6 my-6 shadow-xl" ""}}" {{on "click" this.toggleExpansion}}>
   {{#if this.isExpanded}}
-    <h5 class="mb-4">{{@book.title}}</h5>
+    <div class="flex justify-between mb-2">
+      <h5 class="mb-4">{{@book.title}}</h5>
+      <Ui::Button @onClick={{ this.openModal }}>View details</Ui::Button>
+    </div>
     <div class="flex">
       <img src="{{@book.coverUrl}}" class="w-1/4 shadow mr-4" />
       <div>{{@book.summary}}</div>
-      <Ui::Button @onClick={{ this.openModal }}>View details</Ui::Button>
     </div>
   {{else}}
     <div class="flex">

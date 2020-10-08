@@ -28,4 +28,5 @@ export default function () {
   this.namespace = "api";
 
   this.get("/books");
+  this.get("/books/:id");
 }

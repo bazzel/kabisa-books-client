@@ -1,0 +1,9 @@
+<Ui::Modal
+  @title={{@book.title}}
+  @onCancel={{this.closeModal}}
+  >
+  <div class="flex">
+    <img src="{{@book.coverUrl}}" class="w-1/4 shadow mr-4" />
+    <div>{{@book.summary}}</div>
+  </div>
+</Ui::Modal>
