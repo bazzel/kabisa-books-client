@@ -4,6 +4,7 @@
     <div class="flex">
       <img src="{{@book.coverUrl}}" class="w-1/4 shadow mr-4" />
       <div>{{@book.summary}}</div>
+      <Ui::Button @onClick={{ this.openModal }}>View details</Ui::Button>
     </div>
   {{else}}
     <div class="flex">
