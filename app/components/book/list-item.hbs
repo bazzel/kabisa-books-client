@@ -1,7 +1,17 @@
 <li class="p-5 transition-spacing duration-100 ease-in-out border border-gray-300 -m-px {{if this.isExpanded "-mx-6 my-6 shadow-xl" ""}}" {{on "click" this.toggleExpansion}}>
   {{#if this.isExpanded}}
     <div class="flex justify-between mb-2">
-      <h5 class="mb-4">{{@book.title}}</h5>
+      <div>
+        <h5>{{@book.title}}</h5>
+        {{#if @book.writers}}
+          <span class="text-sm">
+            By
+            {{#each @book.writers as |writer|}}
+              {{writer.name}}
+            {{/each}}
+          </span>
+        {{/if}}
+      </div>
       <Ui::Button @onClick={{ this.openModal }}>View details</Ui::Button>
     </div>
     <div class="flex">
@@ -11,9 +21,19 @@
   {{else}}
     <div class="flex">
       <img src="{{@book.coverUrl}}" class="h-12 shadow mr-4" />
-      <h5>
-        {{@book.title}}
-      </h5>
+      <div>
+        <h5>
+          {{@book.title}}
+        </h5>
+        {{#if @book.writers}}
+          <span class="text-sm">
+            By
+            {{#each @book.writers as |writer|}}
+              {{writer.name}}
+            {{/each}}
+          </span>
+        {{/if}}
+      </div>
     </div>
   {{/if}}
 </li>

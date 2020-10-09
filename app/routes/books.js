@@ -11,6 +11,7 @@ export default class BooksRoute extends Route {
       perPageParam: "page[size]",
       pageParam: "page[number]",
       totalPagesParam: "meta.page-count",
+      include: "writers",
     });
   }
 }

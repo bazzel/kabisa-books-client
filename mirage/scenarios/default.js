@@ -4,5 +4,7 @@ export default function (server) {
     This data will not be loaded in your tests.
   */
 
-  server.createList("book", 100);
+  server.createList("book", 100).forEach((book) => {
+    server.createList("writer", 3, { book });
+  });
 }
