@@ -67,5 +67,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "array-to-sentence": "^2.0.0"
   }
 }

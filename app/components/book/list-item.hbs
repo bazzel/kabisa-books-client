@@ -3,14 +3,7 @@
     <div class="flex justify-between mb-2">
       <div>
         <h5>{{@book.title}}</h5>
-        {{#if @book.writers}}
-          <span class="text-sm">
-            By
-            {{#each @book.writers as |writer|}}
-              {{writer.name}}
-            {{/each}}
-          </span>
-        {{/if}}
+        <Book::WrittenBy @writers={{@book.writers}} />
       </div>
       <Ui::Button @onClick={{ this.openModal }}>View details</Ui::Button>
     </div>
@@ -25,14 +18,7 @@
         <h5>
           {{@book.title}}
         </h5>
-        {{#if @book.writers}}
-          <span class="text-sm">
-            By
-            {{#each @book.writers as |writer|}}
-              {{writer.name}}
-            {{/each}}
-          </span>
-        {{/if}}
+        <Book::WrittenBy @writers={{@book.writers}} />
       </div>
     </div>
   {{/if}}
