@@ -1,3 +1,21 @@
-<Book::ListItems @books={{@model}} />
-<InfinityLoader @infinityModel={{@model}} @loadedText=' ' @triggerOffset=500 />
+<h1 class="text-center text-5xl font-normal tracking-wide mb-12">Books</h1>
+
+<div class="pt-5 pb-16">
+  <div class="p-5 bg-white border border-gray-300 shadow-md rounded-lg text-center">
+    <Input
+      class="text-lg w-full bg-white rounded border border-gray-400 focus:outline-none focus:border-indigo-500 px-4 py-3"
+      placeholder="Search within title, summary or writers"
+      type="search"
+      @value={{this.query}} />
+  </div>
+</div>
+
+<Book::Filter @books={{@model}} @query={{this.query}} as |books|>
+  <Book::ListItems @books={{books}} />
+</Book::Filter>
+<InfinityLoader
+  @infinityModel={{@model}}
+  @loadedText=' '
+  @loadingText=' '
+  @triggerOffset={{500}} />
 {{outlet}}
